@@ -1,5 +1,11 @@
+.vscode
+.idea
 .gradle
 /build/
+gradle/
+node_modules/
+npm-debug.log
+./src/main/frontend/node_modules/
 
 # Ignore Gradle GUI config
 gradle-app.setting
