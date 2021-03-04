@@ -18,6 +18,8 @@ public class WeatherStationFilterValidator implements IFieldValidator, Validator
     @Override
     public void validate(Object target, Errors errors) {
         checkErrors(errors);
-
+        WeatherStationFilter wsFilter = (WeatherStationFilter) target;
+        wsFilter.getStartDate();
+        wsFilter.getEndDate();
     }
 }

@@ -23,17 +23,20 @@ public class WeatherController implements IResponseEntityGenerator {
     @Autowired() private PaginationValidator paginationValidator;
     @Autowired() private WeatherStationFilterValidator filterValidator;
 
+    @CrossOrigin
     @GetMapping("/{id}")
     public ResponseEntity<Object> findById(@PathVariable String id) {
         return processResultBean(service.findById(id));
     }
 
+    @CrossOrigin
     @GetMapping("")
     public ResponseEntity<Object> findAll(PaginationRequest pRequest, BindingResult result) {
         paginationValidator.validate(pRequest, result);
         return processResultBean(service.findAll(pRequest));
     }
 
+    @CrossOrigin
     @PostMapping(path = "/filter")
     public ResponseEntity<Object> filter(@RequestBody WeatherStationFilter wStationFilter, BindingResult result){
         filterValidator.validate(wStationFilter, result);

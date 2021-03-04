@@ -57,7 +57,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                     .fullyAuthenticated()
                     .and()
                     .csrf()
-                    .disable();
+                    .disable()
+                    .cors();
             // For h2 db console access
             http.headers().frameOptions().disable();
         }
@@ -66,5 +67,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) {
         web.ignoring().antMatchers("/h2-console/**");
+        web.ignoring().antMatchers("/detail/**");
     }
 }

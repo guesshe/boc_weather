@@ -37,7 +37,7 @@ public class WeatherStationService implements IServiceHelper {
     }
 
     public ResultBean<Object> findAll(PaginationRequest pRequest) {
-        logger.info("Calling WeatherStationService");
+        logger.info("Calling WeatherStationService.findAll()");
         final int page = pRequest.getPage();
         final int max = pRequest.getMax();
         final String order = pRequest.getOrder();
@@ -49,6 +49,7 @@ public class WeatherStationService implements IServiceHelper {
     }
 
     public ResultBean<Object> filter(WeatherStationFilter wSB) {
+        logger.info("Calling WeatherStationService.filter()");
         String appendedStartDate = wSB.getStartDate() + " 01:00:00.00000000";
         String appendedEndDate = wSB.getEndDate() + " 01:00:00.00000000";
         Timestamp startDate = Timestamp.valueOf(appendedStartDate);

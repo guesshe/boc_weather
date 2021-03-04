@@ -2,11 +2,16 @@ plugins {
 	id 'org.springframework.boot' version '2.4.3'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id "com.github.node-gradle.node" version "3.0.1"
 }
 
 group = 'com.boc.test'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+
+node {
+	version = '14.16'
+}
 
 repositories {
 	mavenCentral()
@@ -25,6 +30,20 @@ dependencies {
 		exclude module: "commons-logging"
 	}
 }
+
+task buildReactApp(type: NodeTask, dependsOn: 'npmInstall') {
+	script = project.file('node_modules/webpack/bin/webpack.js')
+	args = [
+			'--mode', 'development',
+			'--entry', './src/main/webapp/js/index.js',
+			'-o', './src/main/resources/static/dist'
+	]
+}
+
+processResources.dependsOn 'buildReactApp'
+
+clean.delete << file('node_modules')
+clean.delete << file('src/main/resources/static/dist')
 
 test {
 	useJUnitPlatform()
