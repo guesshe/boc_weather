@@ -1,8 +1,5 @@
 package com.boc.test.weather.dto;
 
-import javax.persistence.Column;
-import java.sql.Timestamp;
-
 public class WeatherStationDTO {
     private Long id;
     private String name;

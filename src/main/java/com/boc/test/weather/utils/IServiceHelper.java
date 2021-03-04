@@ -1,10 +1,5 @@
 package com.boc.test.weather.utils;
 
-import java.beans.FeatureDescriptor;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.stream.Stream;
-
 import com.boc.test.weather.dto.ResultBean;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeanWrapper;
@@ -12,15 +7,15 @@ import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+
+import java.beans.FeatureDescriptor;
+import java.util.stream.Stream;
 
 @Service()
 public interface IServiceHelper {
 
-    public static final String ASC = "ASC";
+    String ASC = "ASC";
 
     default ResultBean<Object> setResultBeanSuccessContent(
             final int statusCode, final Object object) {

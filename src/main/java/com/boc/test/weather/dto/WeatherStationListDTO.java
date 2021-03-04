@@ -1,7 +1,5 @@
 package com.boc.test.weather.dto;
 
-import com.boc.test.weather.entity.WeatherStation;
-
 import java.util.List;
 
 public class WeatherStationListDTO {

@@ -2,7 +2,6 @@ package com.boc.test.weather.controller;
 
 import com.boc.test.weather.dto.PaginationRequest;
 import com.boc.test.weather.dto.WeatherStationFilter;
-import com.boc.test.weather.entity.WeatherStation;
 import com.boc.test.weather.service.WeatherStationService;
 import com.boc.test.weather.utils.IResponseEntityGenerator;
 import com.boc.test.weather.validation.PaginationValidator;
@@ -11,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(path = "/weatherstations", produces = {"application/json;charset=UTF-8"})

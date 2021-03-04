@@ -1,7 +1,5 @@
 package com.boc.test.weather.controller;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import com.boc.test.weather.AbstractApplicationTest;
 import com.boc.test.weather.dto.PaginationRequest;
 import com.boc.test.weather.dto.WeatherStationFilter;
@@ -10,6 +8,8 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class WeatherStationControllerIntegrationTest extends AbstractApplicationTest {
     @Test

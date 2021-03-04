@@ -1,6 +1,5 @@
 package com.boc.test.weather.validation;
 
-import com.boc.test.weather.dto.PaginationRequest;
 import com.boc.test.weather.dto.WeatherStationFilter;
 import com.boc.test.weather.utils.IFieldValidator;
 import org.springframework.stereotype.Service;

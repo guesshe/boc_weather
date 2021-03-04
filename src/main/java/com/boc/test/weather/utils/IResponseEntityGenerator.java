@@ -2,12 +2,13 @@ package com.boc.test.weather.utils;
 
 import com.boc.test.weather.dto.ResultBean;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.IOException;
-import javax.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Service()
 public interface IResponseEntityGenerator {
