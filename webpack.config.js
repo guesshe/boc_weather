@@ -17,6 +17,10 @@ module.exports = {
                test: /\.css$/,
                use: ['style-loader', 'css-loader'],
             },
+            {
+               test: /\.(png|ico)$/i,
+               use: ['url-loader'],
+            },
         ],
     },
     resolve: {

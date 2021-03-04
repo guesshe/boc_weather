@@ -30,7 +30,6 @@ dependencies {
 	)
 }
 
-//starts comment following out if you want to run backend only and start frontend with a different server and port
 task buildReactApp(type: NodeTask, dependsOn: 'npmInstall') {
 	script = project.file('node_modules/webpack/bin/webpack.js')
 	args = [
@@ -41,7 +40,6 @@ task buildReactApp(type: NodeTask, dependsOn: 'npmInstall') {
 }
 
 processResources.dependsOn 'buildReactApp'
-// ends
 
 clean.delete << file('node_modules')
 clean.delete << file('src/main/resources/static/dist')

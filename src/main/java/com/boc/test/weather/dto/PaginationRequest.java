@@ -13,6 +13,21 @@ public class PaginationRequest {
     @Nullable
     private String sort;
 
+    public PaginationRequest() {
+    }
+
+    public PaginationRequest(int max, int page) {
+        this.max = max;
+        this.page = page;
+    }
+
+    public PaginationRequest(int max, int page, @Nullable String order, @Nullable String sort) {
+        this.max = max;
+        this.page = page;
+        this.order = order;
+        this.sort = sort;
+    }
+
     public int getMax() {
         return max;
     }

@@ -26,8 +26,5 @@ public abstract class AbstractApplicationTest {
         return "http://localhost:" + port + url;
     }
 
-    protected HttpHeaders getRequestHttpHeadersForCpTokenAuthorization() {
-        return new HttpHeaders();
-    }
 }
 
