@@ -1,6 +1,6 @@
 package com.boc.test.weather.controller;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.boc.test.weather.AbstractApplicationTest;
 import org.junit.jupiter.api.Test;

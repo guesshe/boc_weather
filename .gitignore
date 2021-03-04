@@ -5,11 +5,10 @@
 gradle/
 node_modules/
 npm-debug.log
-./src/main/frontend/node_modules/
-
+src/main/resources/static/dist/
 # Ignore Gradle GUI config
 gradle-app.setting
-
+package-lock.json
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
 

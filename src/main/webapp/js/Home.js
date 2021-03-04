@@ -29,7 +29,7 @@ function Home() {
   const [stations, setStations] = useState({});
   const [metaData, setMetaData] = useState({});
   const [page, setPage] = useState(1);
-  const countPerPage = 25;
+  const countPerPage = 20;
 
   const getStationList = () => {
     axios.get(`http://localhost:8090/weatherstations?page=${page}&max=${countPerPage}`).then(res => {

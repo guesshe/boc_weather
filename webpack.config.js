@@ -15,11 +15,12 @@ module.exports = {
             },
             {
                test: /\.css$/,
-               use: ['css-loader'],
+               use: ['style-loader', 'css-loader'],
             },
         ],
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.css'],
+        modules: ['node_modules'],
     }
 };

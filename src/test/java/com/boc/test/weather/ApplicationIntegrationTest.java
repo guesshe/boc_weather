@@ -1,11 +1,6 @@
 package com.boc.test.weather;
 
-import com.boc.test.weather.controller.WeatherStationControllerIntegrationTest;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@RunWith(Suite.class)
-@Suite.SuiteClasses({
-        WeatherStationControllerIntegrationTest.class
-})
 public class ApplicationIntegrationTest {}
