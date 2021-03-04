@@ -20,6 +20,7 @@ function Detail(props) {
   }, []);
 
   return (
+  <div className="Home">
   <body>
         <h2>
           Detailed View of Weather Station
@@ -53,6 +54,7 @@ function Detail(props) {
       </tbody>
     </table>
   </body>
+  </div>
   )
 }
 

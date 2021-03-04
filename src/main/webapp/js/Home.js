@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import DataTable from 'react-data-table-component';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Card from "@material-ui/core/Card";
+import SortIcon from "@material-ui/icons/ArrowDownward";
+import "./styles.css";
 import axios from 'axios';
 
 var defaultStartDate = new Date(2016,1,1);
@@ -11,16 +14,19 @@ var defaultEndDate = new Date(2017,1,1);
 const columns = [
   {
     name: 'Station Name',
-    selector: 'name'
+    selector: 'name',
+    sortable: true
   },
   {
     name: 'Date',
-    selector: 'date'
+    selector: 'date',
+    sortable: true
   },
   {
     name: 'Mean Temperature',
     cell: row =><Link to={{ pathname: `/detail/${row.id}`}} style={{display: "table-cell"}} target="_blank">{row.meanTemp}</Link>,
-    selector: 'meanTemp'
+    selector: 'meanTemp',
+    sortable: true
   }
 ];
 
@@ -60,7 +66,7 @@ function Home() {
   }
 
   return (
-    <div className="App">
+    <div className="Home">
       <h3>Weather Station Data Table with Pagination</h3>
       <h4>
         Start Date <DatePicker
@@ -77,20 +83,24 @@ function Home() {
       <h4>
       <button onClick={searchList}>Search</button>
       </h4>
-      <DataTable
-        title="Weather Stations"
-        columns={columns}
-        data={stations instanceof Array ? stations : []}
-        highlightOnHover
-        pagination
-        paginationServer
-        paginationTotalRows={metaData.itemsCount}
-        paginationPerPage={countPerPage}
-        paginationComponentOptions={{
-          noRowsPerPage: true
-        }}
-        onChangePage={page => setPage(page)}
-      />
+      <Card>
+        <DataTable
+            title="Weather Stations"
+            columns={columns}
+            defaultSortField="name"
+            sortIcon={<SortIcon />}
+            data={stations instanceof Array ? stations : []}
+            highlightOnHover
+            pagination
+            paginationServer
+            paginationTotalRows={metaData.itemsCount}
+            paginationPerPage={countPerPage}
+            paginationComponentOptions={{
+                noRowsPerPage: true
+            }}
+            onChangePage={page => setPage(page)}
+        />
+      </Card>
     </div>
   );
 }
