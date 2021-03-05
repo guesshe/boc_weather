@@ -12,8 +12,7 @@ sudo apt-get install nodejs
 # To run this application in bundled mode
 ./gradlew bootRun
 
-# To only run the backend
-# Note! If you run backend only mode, you need to clone the boc_weather_frontend repo to access the frontend, please follow instructions on that project
+# To only run the backend. Note! If you run backend only mode, you need to clone the boc_weather_frontend repo to access the frontend, please follow instructions on that project
 ./gradlew bootRun -x buildReactApp
 
 # To access frontend 
