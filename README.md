@@ -13,10 +13,11 @@ sudo apt-get install nodejs
 ./gradlew bootRun
 
 # To only run the backend
+# Note! If you run backend only mode, you need to clone the boc_weather_frontend repo to access the frontend, please follow instructions on that project
 ./gradlew bootRun -x buildReactApp
 
 # To access frontend 
 http://localhost:8090
 
-# Using following if you want an isolated frontend dev env
+# Using following if you run the project in backend only mode or want an isolated frontend dev env
 git clone git@github.com:guesshe/boc_weather_frontend.git
