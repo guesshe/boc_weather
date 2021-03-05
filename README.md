@@ -3,6 +3,7 @@ assignment from boc
 
 # Nodejs and NPM is required to run the frontend
 sudo apt-get install npm
+
 sudo apt-get install nodejs
 
 # To run integration tests
