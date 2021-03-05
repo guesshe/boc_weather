@@ -57,6 +57,7 @@ function Home() {
     } else {
       searchList();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, countPerPage]);
 
   const [startDate, setStartDate] = useState(defaultStartDate);
