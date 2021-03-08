@@ -5,7 +5,6 @@ function Detail(props) {
 
   const [station, setStation] = useState({});
   const {id} = props.match.params
-  console.log(id);
   const getStation = () => {
     console.log('props form link', props.id)
     axios.get(`http://localhost:8090/weatherstations/${id}`).then(res => {
@@ -21,11 +20,10 @@ function Detail(props) {
   }, []);
 
   return (
-  <div className="Home">
-  <body>
-        <h2>
+  <div className="Detail">
+    <h2>
           Detailed View of Weather Station
-        </h2>
+    </h2>
     <table bordered="true" hover="true">
       <tbody>
         <tr>
@@ -54,7 +52,6 @@ function Detail(props) {
         </tr>
       </tbody>
     </table>
-  </body>
   </div>
   )
 }
