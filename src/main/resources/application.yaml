@@ -27,3 +27,7 @@ logging:
 
 server:
   port: 8090
+  error:
+    path: /error
+    whitelabel:
+      enabled: false
