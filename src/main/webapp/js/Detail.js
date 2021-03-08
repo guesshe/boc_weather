@@ -6,7 +6,6 @@ function Detail(props) {
   const [station, setStation] = useState({});
   const {id} = props.match.params
   const getStation = () => {
-    console.log('props form link', props.id)
     axios.get(`http://localhost:8090/weatherstations/${id}`).then(res => {
       setStation(res.data);
     }).catch(err => {
