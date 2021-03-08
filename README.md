@@ -8,6 +8,7 @@ sudo apt-get install nodejs
 
 # To run integration tests
 ./gradlew clean test -x buildReactApp -i
+
 test report can be accessed at <project_root>/build/reports/tests/test/index.html
 
 # To run this application in bundled mode
