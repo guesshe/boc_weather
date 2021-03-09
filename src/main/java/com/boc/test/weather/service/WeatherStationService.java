@@ -27,29 +27,32 @@ public class WeatherStationService implements IServiceHelper {
     private WeatherStationRepository weatherStationRepository;
 
     public ResultBean<Object> findById(String id) {
+        logger.info("Calling WeatherStationService.findById() with id=" + id);
         Optional<WeatherStation> ws = weatherStationRepository.findById(Long.parseLong(id));
         if (!ws.isPresent()) {
             throw new RecordNotFoundException("Requested resource not found!");
         }
         WeatherStationDetailDTO wsDetailDTO = new WeatherStationDetailDTO();
         copyPropertiesIgnoreNull(ws.get(), wsDetailDTO);
+        logger.info("Finished calling WeatherStationService.findById()");
         return setResultBeanSuccessContent(HttpStatus.OK.value(), wsDetailDTO);
     }
 
     public ResultBean<Object> findAll(PaginationRequest pRequest) {
-        logger.info("Calling WeatherStationService.findAll()");
+        logger.info("Calling WeatherStationService.findAll() with " + pRequest.toString());
         final int page = pRequest.getPage();
         final int max = pRequest.getMax();
         final String order = pRequest.getOrder();
         final String sort = pRequest.getSort();
         final Page<WeatherStation> wsPage =
                 weatherStationRepository.findAll(createPageRequest(page - 1, max, order, sort));
+        logger.info("Finished calling WeatherStationService.findAll()");
         return setResultBeanSuccessContent(
                 HttpStatus.OK.value(), returnListOfFoundRecords(wsPage));
     }
 
     public ResultBean<Object> filter(WeatherStationFilter wSB) {
-        logger.info("Calling WeatherStationService.filter()");
+        logger.info("Calling WeatherStationService.filter() with " + wSB.toString());
         String appendedStartDate = wSB.getStartDate() + " 01:00:00.00000000";
         String appendedEndDate = wSB.getEndDate() + " 01:00:00.00000000";
         Timestamp startDate = Timestamp.valueOf(appendedStartDate);
@@ -60,6 +63,7 @@ public class WeatherStationService implements IServiceHelper {
         final String sort = wSB.getPage().getSort();
         final Page<WeatherStation> wsPage = weatherStationRepository.findAllByDateGreaterThanEqualAndDateLessThanEqual(
                 startDate, endDate, createPageRequest(page - 1, max, order, sort));
+        logger.info("Finished calling WeatherStationService.filter()");
         return setResultBeanSuccessContent(
                 HttpStatus.OK.value(), returnListOfFoundRecords(wsPage));
     }

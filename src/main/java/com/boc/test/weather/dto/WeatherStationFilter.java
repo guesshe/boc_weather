@@ -36,4 +36,13 @@ public class WeatherStationFilter {
     public void setPage(PaginationRequest page) {
         this.page = page;
     }
+
+    @Override
+    public String toString() {
+        return "WeatherStationFilter{" +
+                "startDate='" + startDate + '\'' +
+                ", endDate='" + endDate + '\'' +
+                ", page=" + page +
+                '}';
+    }
 }

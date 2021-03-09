@@ -60,5 +60,14 @@ public class PaginationRequest {
         this.sort = sort;
     }
 
+    @Override
+    public String toString() {
+        return "PaginationRequest{" +
+                "max=" + max +
+                ", page=" + page +
+                ", order='" + order + '\'' +
+                ", sort='" + sort + '\'' +
+                '}';
+    }
 }
 
